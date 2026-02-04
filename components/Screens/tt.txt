@@ -1,0 +1,12 @@
+<FlatList
+          style={{backgroundColor:"yellow",flex:1,height:200}}
+          data={images}
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={(_, index) => index.toString()}
+          renderItem={({ item }) => (
+            <Image source={{uri:item}} style={styles.image} />
+            
+          )}
+        />

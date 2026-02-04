@@ -1,3 +1,6 @@
+
+
+
 {
   "expo": {
     "name": "BoardMe",
@@ -9,9 +12,11 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "buildNumber":"1.0.0"
     },
     "android": {
+      "versionCode":1,
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -46,3 +51,5 @@
     }
   }
 }
+
+

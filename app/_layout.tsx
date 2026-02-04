@@ -1,24 +1,35 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+import FavouriteBoardings from '@/contex/favourites';
+import { DataProvider } from '@/contex/dataImport';
+import { Drawer } from 'expo-router/drawer';
+import { StatusBar, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { AuthContext } from '@/contex/auth';
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <AuthContext>
+    <SafeAreaProvider>
+      <StatusBar barStyle="dark-content" />
+      <FavouriteBoardings>
+        <DataProvider>
+
+      <Drawer initialRouteName="(atabs)" screenOptions={
+         {swipeEnabled: false,}
+        
+      }>
+        <Drawer.Screen
+          name="(atabs)"
+          options={{
+            title: 'Find or Add listing',
+            headerShown: false,
+          }}
+        />
+        
+      </Drawer>
+      </DataProvider>
+      </FavouriteBoardings>
+    </SafeAreaProvider>
+    </AuthContext>
   );
 }
