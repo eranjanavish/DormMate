@@ -7,7 +7,7 @@ A React Native Expo app to help university students find nearby boarding places.
 
 
 ### Screenshots
-![Logo](assets/1.png)
+![Logo](assets/icon.png)
 ![Home Screen](assets/Readme/1.jpeg)
 ![More Information](assets/Readme/2.jpeg)
 ![Student Screen](assets/Readme/4.jpeg)
